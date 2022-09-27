@@ -63,6 +63,9 @@ func GetNoteHandler(w http.ResponseWriter, r *http.Request) {
 //PutNoteHandler HTTP Put - /api/notes/{id}
 func PutNoteHandler(w http.ResponseWriter, r *http.Request) {
 	var err error
+	/* The Vars function of the mux package returns the route variables for the current request.
+	With a route value of id, the Note object is retrieved from the noteStore map,
+	and the value of CreatedOn is copied to the Note object.*/
 	vars := mux.Vars(r)
 	k := vars["id"]
 	var noteToUpd Note
